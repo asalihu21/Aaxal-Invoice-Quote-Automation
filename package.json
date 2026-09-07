@@ -1,0 +1,14 @@
+{
+  "name": "aaxal-office",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Database-backed quotations and invoicing for AAXAL Offshore Services Limited",
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "dev": "node --no-warnings --watch server.js",
+    "test": "node --no-warnings --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

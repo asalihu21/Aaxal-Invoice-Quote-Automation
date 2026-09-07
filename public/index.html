@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f5fae">
+  <title>AAXAL Office</title>
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/overview" aria-label="AAXAL Office home">
+        <span class="brand-mark">A</span>
+        <span><strong>AAXAL</strong><small>OFFSHORE</small></span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#/overview" data-nav="overview"><span data-icon="grid"></span>Overview</a>
+        <a href="#/quotes" data-nav="quotes"><span data-icon="file"></span>Quotations</a>
+        <a href="#/invoices" data-nav="invoices"><span data-icon="receipt"></span>Invoices</a>
+        <a href="#/customers" data-nav="customers"><span data-icon="users"></span>Customers</a>
+        <a href="#/catalog" data-nav="catalog"><span data-icon="book"></span>Price book</a>
+      </nav>
+      <div class="sidebar-card">
+        <span class="eyebrow">2026 price book</span>
+        <strong>10 controlled rates</strong>
+        <p>Every linked rate is checked again before finalisation.</p>
+      </div>
+      <div class="sidebar-foot">
+        <span class="avatar">SG</span>
+        <span><strong>Safiyyah Gwandu</strong><small>Document manager</small></span>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menuButton" aria-label="Open menu"><span data-icon="menu"></span></button>
+        <div class="top-title"><span class="status-dot"></span><span>Operations workspace</span></div>
+        <div class="top-actions">
+          <button class="button button-ghost" data-action="new-customer"><span data-icon="plus"></span>Customer</button>
+          <a class="button button-primary" href="#/document/new?type=quote"><span data-icon="plus"></span>New quotation</a>
+        </div>
+      </header>
+      <main id="app" tabindex="-1"><div class="loading-state"><span class="spinner"></span>Loading workspace…</div></main>
+    </section>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" aria-live="polite"></div>
+  <div id="printLayer"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

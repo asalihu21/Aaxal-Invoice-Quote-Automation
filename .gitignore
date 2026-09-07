@@ -1,0 +1,5 @@
+data/*.sqlite
+data/*.sqlite-*
+.pdfdeps/
+.DS_Store
+
