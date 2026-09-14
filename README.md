@@ -14,6 +14,40 @@ Open [http://localhost:4173](http://localhost:4173).
 
 The SQLite database is created automatically at `data/aaxal.sqlite`. To use another location, set `AAXAL_DB_PATH`. To use another port, set `PORT`.
 
+## Run with Docker
+
+Requirements: Docker Desktop, Docker Engine with the Compose plugin, or another compatible Docker installation.
+
+From this folder, run:
+
+```bash
+docker compose up --build -d
+```
+
+Then open [http://localhost:4173](http://localhost:4173). The database is kept in the named `aaxal-data` volume, so documents remain available when the container is recreated or upgraded.
+
+Useful commands:
+
+```bash
+# View logs
+docker compose logs -f
+
+# Stop the application without deleting its data
+docker compose down
+
+# Start it again
+docker compose up -d
+```
+
+Do not add `--volumes` to `docker compose down` unless you intentionally want to delete the saved database.
+
+To use Docker without Compose:
+
+```bash
+docker build -t aaxal-office .
+docker run -d --name aaxal-office -p 4173:4173 -v aaxal-data:/app/data --restart unless-stopped aaxal-office
+```
+
 ## Included workflow
 
 - Create, edit and finalise quotations and invoices.

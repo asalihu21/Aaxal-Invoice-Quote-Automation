@@ -1,0 +1,11 @@
+services:
+  aaxal-office:
+    build: .
+    ports:
+      - "4173:4173"
+    volumes:
+      - aaxal-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  aaxal-data:
